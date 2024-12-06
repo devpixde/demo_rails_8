@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
+This is just a little toy app to explore, learn and document some basic rails features. (rails 8).
 
-Things you may want to cover:
+## Start
 
-* Ruby version
+```shell
+  bin/dev
+```
 
-* System dependencies
+## Dependencies
 
-* Configuration
+- ruby v3.3.6
+- rails 8.0.0
+- node 22.10.0
 
-* Database creation
+- tailwind, jsbuild
 
-* Database initialization
+- Kamal for deployment (great!)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
