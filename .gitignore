@@ -4,6 +4,9 @@
 # belong in git's global ignore instead:
 # `$XDG_CONFIG_HOME/git/ignore` or `~/.config/git/ignore`
 
+
+.kamal
+
 # Ignore bundler config.
 /.bundle
 
@@ -32,6 +35,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/deploy.yml
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
