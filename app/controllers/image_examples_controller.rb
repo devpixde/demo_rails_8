@@ -1,6 +1,15 @@
 class ImageExamplesController < ApplicationController
   before_action :set_image_example, only: %i[ show edit update destroy ]
+  before_action :authenticate_http_basic, only: %i[ create ]
 
+  def authenticate_http_basic
+    return if authenticate_with_http_basic { |un, pw| do_authentication(un, pw) }
+    request_http_basic_authentication
+  end
+
+  def do_authentication(username, password)
+    username == 'devpix' && password == ENV['IMAGE_UPLOAD_PASSWORD']
+  end
   # GET /image_examples or /image_examples.json
   def index
     @image_examples = ImageExample.all
