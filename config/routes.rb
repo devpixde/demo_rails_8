@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "log_test/index"
+
+  post "log_test/log"
   resources :pseudo_chats, only: [:index, :create]
   resources :image_examples
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
