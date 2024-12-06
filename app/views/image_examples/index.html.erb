@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Image examples" %>
+
+<h1>Image examples</h1>
+
+<div id="image_examples">
+  <% @image_examples.each do |image_example| %>
+    <%= render image_example %>
+    <p>
+      <%= link_to "Show this image example", image_example %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New image example", new_image_example_path %>
