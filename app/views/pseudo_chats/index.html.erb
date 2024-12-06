@@ -1,0 +1,33 @@
+
+<%= turbo_stream_from 'pseudo-chats' %>
+<%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+
+
+<% content_for :title, "Pseudo chats" %>
+
+<h1>Pseudo chat</h1>
+
+<section class="bg-gray-100 p-4">
+<ul id="pseudo_chats">
+  <% @pseudo_chats.each do |pseudo_chat| %>
+    <%= render pseudo_chat %>
+  <% end %>
+</ul>
+</section>
+
+<%= render "form", pseudo_chat: @pseudo_chat %>
+
+<div class="my-4 bg-yellow-100 p-4">Open this page in another browser. Send messages. Observe Live Updates. Max. 10 messages in db.</div>
+<code>
+<pre>
+
+  # Model
+   after_commit -> {broadcast_refresh_later_to 'pseudo-chats' }
+
+  # View
+  &lt;%= turbo_stream_from 'pseudo-chats' %&gt;
+  &lt;%= turbo_refreshes_with method: :morph, scroll: :preserve %&gt;
+
+</pre>
+</code>
+
