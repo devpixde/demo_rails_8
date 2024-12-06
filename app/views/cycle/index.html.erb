@@ -1,0 +1,17 @@
+<h2>cycle</h2>
+<code>
+  <pre>
+    &lt;% @data.each do |entry| %&gt;
+      &lt;li class="&lt;%= cycle("bg-red-200", "bg-blue-200") %&gt;"&gt;&lt;%= entry %&gt;&lt;/li&gt;
+    &lt;% end %&gt;</pre>
+</code>
+
+
+<div class="mt-10">
+  <ul>
+    <% @data.each do |entry| %>
+      <li class="<%= cycle("bg-red-200", "bg-blue-200") %>"><%= entry %></li>
+    <% end %>
+  </ul>
+</div>
+
