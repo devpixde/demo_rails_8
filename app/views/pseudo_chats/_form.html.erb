@@ -1,0 +1,7 @@
+<%= form_with(model: pseudo_chat) do |form| %>
+  <div class="w-96 border-gray-500 pt-3 gap-2 flex">
+
+    <%= form.text_field :message, placeholder: 'Your message', maxlength:30 %>
+    <%= form.submit 'Send' %>
+  </div>
+<% end %>

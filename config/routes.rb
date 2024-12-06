@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pseudo_chats, only: [:index, :create]
   resources :image_examples
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
