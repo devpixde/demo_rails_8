@@ -4,10 +4,6 @@ class Wolpertinger < ApplicationRecord
   validate :wolpertinger_color
 
 
-
-
-
-
   def wolpertinger_color
     errors.add(:color, 'wrong color') unless color.match(/(brown|red|green|pink)/)
   end

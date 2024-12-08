@@ -1,16 +1,70 @@
+
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Wolpertingers" %>
 
 <h1>Wolpertingers</h1>
 
-<div id="wolpertingers">
-  <% @wolpertingers.each do |wolpertinger| %>
-    <%= render wolpertinger %>
+<section id="wolpertingers">
+
+  <table>
+    <thead>
+    <tr class="bg-lime-300">
+      <th>Name</th>
+      <th>Age</th>
+      <th>Color</th>
+      <th>State</th>
+      <th>Mood</th>
+      <th>Walking?</th>
+      <th>Asleep at</th>
+      <th>Awaken at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @wolpertingers.each do |wolpertinger| %>
+      <tr>
+        <td><%= wolpertinger.name %></td>
+        <td><%= wolpertinger.age %></td>
+        <td><%= wolpertinger.color %></td>
+        <td><%= wolpertinger.state %></td>
+        <td><%= wolpertinger.mood %></td>
+        <td><%= wolpertinger.is_walking %></td>
+        <td><%= wolpertinger.time_asleep %></td>
+        <td><%= wolpertinger.time_awaken %></td>
+        <td>
+          <%= button_to wolpertinger.is_walking ? 'stop walk' : 'do walk', wolpertingers_toggle_walk_path(id: wolpertinger.id), method: :post %>
+        </td>
+        <td><%= link_to wolpertinger_path(wolpertinger) do %>
+            <%= heroicon 'eye', class: 'inline-block' %>
+            <% end %>
+        </td>
+        <td><%= link_to edit_wolpertinger_path(wolpertinger) do %>
+            <%= heroicon 'pencil', class: 'inline-block' %>
+            <% end %>
+        </td>
+        <td>
+          <%= button_to @wolpertinger, method: :delete, class: 'bg-red-600'  do %>
+            <%= heroicon 'trash', class: 'inline-block bg-red-600' %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>
+
+
+<!--<div id="wolpertingers">
+  <%# @wolpertingers.each do |wolpertinger| %>
+    <%#= render wolpertinger %>
     <p>
-      <%= link_to "Show this wolpertinger", wolpertinger %>
+      <%#= link_to "Show this wolpertinger", wolpertinger %>
     </p>
-  <% end %>
-</div>
+  <%# end %>
+</div>-->
 
 <%= link_to "New wolpertinger", new_wolpertinger_path %>

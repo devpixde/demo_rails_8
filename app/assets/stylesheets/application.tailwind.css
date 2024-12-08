@@ -10,7 +10,13 @@
         @apply text-2xl mt-1 mb-3;
     }
     p{
-        @apply my-2
+        @apply my-2;
+    }
+    td, th{
+        @apply p-2;
+    }
+    td{
+        @apply border border-gray-300;
     }
     pre{
         @apply p-4 m-2 bg-yellow-50 border rounded-md;

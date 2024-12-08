@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get "testing/index"
   resources :wolpertingers
+
+
+  post "wolpertingers/toggle_walk"
+
   get "log_test/index"
 
   post "log_test/log"

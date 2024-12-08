@@ -57,6 +57,21 @@ class WolpertingersController < ApplicationController
     end
   end
 
+  def toggle_walk
+    wolpertinger = Wolpertinger.find(params[:id])
+    unless wolpertinger.nil?
+      wolpertinger.is_walking = !wolpertinger.is_walking
+      if wolpertinger.save
+        respond_to do |format|
+          format.html { redirect_to wolpertingers_path, status: :see_other}
+          format.json { head :no_content }
+        end
+      end
+    end
+
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wolpertinger
