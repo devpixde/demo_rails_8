@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "testing/index"
+  resources :wolpertingers
   get "log_test/index"
 
   post "log_test/log"

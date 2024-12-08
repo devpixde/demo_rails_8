@@ -1,0 +1,2 @@
+class Wolpertinger < ApplicationRecord
+end

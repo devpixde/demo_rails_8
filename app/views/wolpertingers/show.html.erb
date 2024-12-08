@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @wolpertinger %>
+
+<div>
+  <%= link_to "Edit this wolpertinger", edit_wolpertinger_path(@wolpertinger) %> |
+  <%= link_to "Back to wolpertingers", wolpertingers_path %>
+
+  <%= button_to "Destroy this wolpertinger", @wolpertinger, method: :delete %>
+</div>
