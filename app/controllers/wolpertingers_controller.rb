@@ -65,6 +65,6 @@ class WolpertingersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wolpertinger_params
-      params.expect(wolpertinger: [ :state, :is_walking, :color, :age, :mood ])
+      params.expect(wolpertinger: [ :name, :color, :age ])
     end
 end

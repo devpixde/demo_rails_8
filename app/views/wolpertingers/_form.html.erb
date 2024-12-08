@@ -12,29 +12,39 @@
   <% end %>
 
   <div>
-    <%= form.label :state, style: "display: block" %>
-    <%= form.text_field :state %>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+    <span class="italic">Min: 3 Max:30</span>
   </div>
 
-  <div>
-    <%= form.label :is_walking, style: "display: block" %>
-    <%= form.checkbox :is_walking %>
-  </div>
+<!--  <div>
+    <%#= form.label :state, style: "display: block" %>
+    <%#= form.text_field :state %>
+    <span class="italic">sleeping|awake</span>
+  </div>-->
+
+<!--  <div>
+    <%#= form.label :is_walking, style: "display: block" %>
+    <%#= form.checkbox :is_walking %>
+  </div>-->
 
   <div>
     <%= form.label :color, style: "display: block" %>
     <%= form.text_field :color %>
+    <span class="italic">brown|red|green|pink</span>
   </div>
 
   <div>
     <%= form.label :age, style: "display: block" %>
     <%= form.number_field :age %>
+    <span class="italic">between 0 and 200</span>
   </div>
 
-  <div>
-    <%= form.label :mood, style: "display: block" %>
-    <%= form.text_field :mood %>
-  </div>
+<!--  <div>
+    <%#= form.label :mood, style: "display: block" %>
+    <%#= form.text_field :mood %>
+    <span class="italic">angry|happy|mysterious|lonely|cheerful</span>
+  </div>-->
 
   <div>
     <%= form.submit %>
