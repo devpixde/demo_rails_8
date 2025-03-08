@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state: MyString
+  is_walking: false
+  color: MyString
+  age: 1
+  mood: MyString
+
+two:
+  state: MyString
+  is_walking: false
+  color: MyString
+  age: 1
+  mood: MyString

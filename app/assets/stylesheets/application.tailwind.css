@@ -9,15 +9,32 @@
     h2 {
         @apply text-2xl mt-1 mb-3;
     }
+    p{
+        @apply my-2;
+    }
+    td, th{
+        @apply p-2;
+    }
+    td{
+        @apply border border-gray-300;
+    }
     pre{
         @apply p-4 m-2 bg-yellow-50 border rounded-md;
     }
 
     input[type=submit], input[type=button], button {
-        @apply bg-lime-700 hover:bg-lime-900 text-white p-2 rounded-lg border ;
+        @apply bg-lime-700 hover:bg-lime-900 text-white my-4 p-2 rounded-lg border ;
     }
 
     a{
         @apply underline;
+    }
+
+    input[type=number],  input[type=text]{
+        @apply border border-gray-500;
+    }
+
+    .field_with_errors{
+        @apply border border-red-500;
     }
 }

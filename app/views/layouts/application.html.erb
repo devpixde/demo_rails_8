@@ -21,6 +21,7 @@
   <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
 </head>
 
 <body class="flex min-h-full flex-col container mx-auto">

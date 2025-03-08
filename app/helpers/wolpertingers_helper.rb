@@ -1,0 +1,2 @@
+module WolpertingersHelper
+end

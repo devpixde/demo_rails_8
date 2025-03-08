@@ -1,0 +1,39 @@
+<h1>Testing</h1>
+<article>
+<p>As a demo object for Testing we have a class "Wolpertinger".</p>
+<section>
+
+  <p><%= link_to 'Edit some Wolpertinger', wolpertingers_path %></p>
+<table class="border-2">
+  <tr class="border-2"><td class="p-2 font-bold">Wolpertinger</td></tr>
+  <tr class="border-2"><td  class="p-2"> - name:string</td></tr>
+  <tr class="border-2"><td  class="p-2"> - age:number</td></tr>
+  <tr class="border-2"><td  class="p-2"> - color:string</td></tr>
+  <tr class="border-2"><td  class="p-2"> - state:string</td></tr>
+  <tr class="border-2"><td  class="p-2"> - time_asleep:datetime</td></tr>
+  <tr class="border-2"><td  class="p-2"> - time_awaken:datetime</td></tr>
+  <tr class="border-2"><td  class="p-2"> - is_walking:boolean</td></tr>
+  <tr class="border-2"><td  class="p-2"> - mood:string</td></tr>
+  <tr class="border-2"><td  class="p-2"> ----------- </td></tr>
+  <tr class="border-2"><td  class="p-2"> bark() </td></tr>
+  <tr class="border-2"><td  class="p-2"> asleep() </td></tr>
+  <tr class="border-2"><td  class="p-2"> awake() </td></tr>
+  <tr class="border-2"><td  class="p-2"> walk() </td></tr>
+  <tr class="border-2"><td  class="p-2"> stop_walk() </td></tr>
+  <tr class="border-2"><td  class="p-2"> give_present(present) # a human will give a present, mood of wolpertinger depends on presents value </td></tr>
+</table>
+
+</section>
+  <section>
+    Idea:
+    A wolperinger needs name, age, color at time of creation.
+    mood, state, is_walking are set on by methods
+    giving him a present by a human will set his mood depending on value of present.
+    This gives us some constellations to test and oportunity to use mocks and stubs
+    <p>A maximum of 10 wolperingers are stored in db. new ones delete older ones </p>
+  </section>
+
+</article>
+
+
+
