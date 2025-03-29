@@ -19,3 +19,4 @@ This is just a little toy app to explore, learn and document some basic rails fe
 
 - Kamal for deployment (great!)
 
+

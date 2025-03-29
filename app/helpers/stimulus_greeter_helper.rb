@@ -1,0 +1,2 @@
+module StimulusGreeterHelper
+end

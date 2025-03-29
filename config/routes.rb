@@ -30,4 +30,8 @@ Rails.application.routes.draw do
   get "/truncate" => "truncate#index"
   get "/striptags" => "striptags#index"
 
+  # Stimuls Examples
+
+  get "/stimulus_greeter" => "stimulus_greeter#index"
+
 end

@@ -1,0 +1,15 @@
+
+<h1>Stimulus Greeter</h1>
+<p>Ein einfaches Hello World Beispiel</p>
+
+<section data-controller="greeter">
+  <input type="text" data-greeter-target="input">
+  <button data-action="greeter#greet">Send Greeting</button>
+  <div data-greeter-target="output"></div>
+</section>
+
+<section>
+  <h2>Erklärung</h2>
+  Im erb Template sind nur die elemente über data-attributes deklariert
+  Über "data-controller" wird der Controller referenziert der das Javascript enthält.
+</section>
