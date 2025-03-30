@@ -1,0 +1,23 @@
+<h1>Turboframetarget#index</h1>
+<section class="grid grid-cols-2 h-72 max-h-72">
+  <div>
+    <h3>Der Zielframe ändert sich:</h3>
+    <turbo-frame id="target_frame">
+      <div>Ausgewählte Elemente:</div>
+      <% @items.each do |item| %>
+        <div>Item: <%= item %></div>
+      <% end %>
+    </turbo-frame>
+  </div>
+  <div class="bg-slate-300  max-h-72 overflow-y-scroll p-2">
+    <h3>Das Formular wird nicht neu geladen</h3>
+    <%= form_with method: :post, html: { data: { turbo_frame: "target_frame" } } do %>
+      <% 100.times do |i| %>
+        <div>
+          <%= check_box_tag "items[]", i, id: "ch_#{i}", onchange: "form.requestSubmit()" %>
+          <%= label_tag "ch_#{i}", "Item: #{i}" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

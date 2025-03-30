@@ -6,19 +6,28 @@
     h1 {
         @apply text-4xl mt-2 mb-4;
     }
+
     h2 {
         @apply text-2xl mt-1 mb-3;
     }
-    p{
+
+    h3 {
+        @apply text-1xl mt-1 mb-3 font-bold;
+    }
+
+    p {
         @apply my-2;
     }
-    td, th{
+
+    td, th {
         @apply p-2;
     }
-    td{
+
+    td {
         @apply border border-gray-300;
     }
-    pre{
+
+    pre {
         @apply p-4 m-2 bg-yellow-50 border rounded-md;
     }
 
@@ -26,15 +35,15 @@
         @apply bg-lime-700 hover:bg-lime-900 text-white my-4 p-2 rounded-lg border ;
     }
 
-    a{
+    a {
         @apply underline;
     }
 
-    input[type=number],  input[type=text]{
+    input[type=number], input[type=text] {
         @apply border border-gray-500;
     }
 
-    .field_with_errors{
+    .field_with_errors {
         @apply border border-red-500;
     }
 }
