@@ -1,0 +1,27 @@
+<h1>Turboframeclocks#index</h1>
+
+
+<section class="grid grid-cols-2">
+  <turbo-frame id="clock1">
+    <div class="bg-orange-300 p-2"><p>Clock 1: <%= Time.new.to_fs(:db)  %></p>
+      <p><a href="/turboframeclocks/index">Reload Clock 1</a></p></div>
+  </turbo-frame>
+  <turbo-frame id="clock2">
+    <div class="bg-orange-200 p-2"><p>Clock 2: <%= Time.new.to_fs(:db) %></p>
+      <p><a href="/turboframeclocks/index">Reload Clock 2</a></p></div>
+  </turbo-frame>
+  <turbo-frame id="clock3">
+    <div class="bg-orange-200 p-2"><p>Clock 3: <%= Time.new.to_fs(:db) %></p>
+      <p><a href="/turboframeclocks/index">Reload Clock 3</a></p></div>
+  </turbo-frame>
+  <turbo-frame id="clock4">
+    <div class="bg-orange-300 p-2"><p>Clock 4: <%= Time.new.to_fs(:db) %></p>
+      <p><a href="/turboframeclocks/index">Reload Clock 4</a></p></div>
+  </turbo-frame>
+</section>
+
+<section>
+  <h2>Erklärung</h2>
+  Obwohl der Link auf Reload die ganze Seite abruft wird nur der turbo-frame aktualisiert, aus dem der Aufruf kam.
+</section>
+
