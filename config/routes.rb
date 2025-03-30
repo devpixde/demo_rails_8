@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "turboframetarget/index"
+  post "turboframetarget/index"
   get "turboframeclocks/index"
   get "testing/index"
   resources :wolpertingers
