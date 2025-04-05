@@ -1,0 +1,12 @@
+<h1>PersonScaffold#index</h1>
+<p>Find me in app/views/person_scaffold/index.html.erb</p>
+
+<pre><code>  bin/rails g scaffold person firstname:string lastname:string age:integer is_climber:boolean
+</code></pre>
+
+<p>
+  <%= link_to 'new Person', new_person_path %>
+|
+
+  <%= link_to 'Person list', people_path %>
+</p>

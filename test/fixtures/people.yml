@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  age: 1
+  is_climber: false
+
+two:
+  firstname: MyString
+  lastname: MyString
+  age: 1
+  is_climber: false
