@@ -4,15 +4,15 @@
 
 @layer base {
     h1 {
-        @apply text-4xl mt-2 mb-4;
+        @apply text-xl font-bold mt-2 mb-4 bg-green-400;
     }
 
     h2 {
-        @apply text-2xl mt-1 mb-3;
+        @apply text-lg mb-1 mt-6 font-bold border-green-200;
     }
 
     h3 {
-        @apply text-1xl mt-1 mb-3 font-bold;
+        @apply text-lg mt-3 mb-1  border-green-100;
     }
 
     p {
