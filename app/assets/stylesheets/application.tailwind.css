@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    div, p, code, pre{
+        @apply text-xs;
+    }
     h1 {
         @apply text-xl font-bold mt-2 mb-4 bg-green-400;
     }

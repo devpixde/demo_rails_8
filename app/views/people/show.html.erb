@@ -1,0 +1,55 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @person %>
+
+<div>
+  <%= link_to "Edit this person", edit_person_path(@person) %> |
+  <%= link_to "Back to people", people_path %>
+
+
+  <%= button_to "Destroy this person", @person, method: :delete %>
+</div>
+
+<div>
+  <h3>Wenn der  get request mit dem header ` 'Accept': 'application/json'` aufgerufen wurde:
+
+  </h3>
+  <pre>def show
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @person }
+    end
+end
+  </pre>
+</div>
+
+<%= button_to 'Die Response als json', '#', id: 'json-button' %>
+<pre id="target"></pre>
+
+<script>
+
+    document.getElementById('json-button').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        fetch( document.location, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('target').innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle the error here
+            });
+    });
+
+</script>
