@@ -18,7 +18,7 @@ module Authentication
     end
 
     def require_authentication
-      resume_session || request_authentication
+      Current.session ||= find_session_by_cookie
     end
 
     def resume_session

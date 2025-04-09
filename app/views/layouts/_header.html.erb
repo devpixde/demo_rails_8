@@ -4,9 +4,15 @@
       <%= heroicon 'home', class: 'inline-block' %>Home
     <% end %>
   </div>
+  <div>
+    User: <%= current_user&.email_address %>
+  </div>
+  <div>
+
   <% if authenticated? %>
     <%= button_to "Log out", session_path, method: :delete %>
   <% else %>
     <%= link_to "Log in", new_session_path %>
   <% end %>
+  </div>
 </header>
