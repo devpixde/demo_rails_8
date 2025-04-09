@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :passwords, param: :token
   resources :people
   get "person_scaffold/index"
   get "turboframetarget/index"
