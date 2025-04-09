@@ -1,0 +1,2 @@
+module AuthenticateCancancanHelper
+end

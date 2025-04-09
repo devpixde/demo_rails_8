@@ -41,5 +41,5 @@ Rails.application.routes.draw do
   # Stimuls Examples
 
   get "/stimulus_greeter" => "stimulus_greeter#index"
-
+  get '/authenticate_and_cancancan' => 'authenticate_cancancan#index'
 end
