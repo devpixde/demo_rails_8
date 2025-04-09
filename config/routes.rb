@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   resources :people
-  get "person_scaffold/index"
-  get "turboframetarget/index"
-  post "turboframetarget/index"
   get "turboframeclocks/index"
+  post "turboframetarget/index"
+  get "turboframetarget/index"
+  get "person_scaffold/index"
+  get "person_scaffold/index"
   get "testing/index"
   resources :wolpertingers
 
