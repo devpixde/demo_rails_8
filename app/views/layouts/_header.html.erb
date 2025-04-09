@@ -1,0 +1,12 @@
+<header class="p-2 bg-lime-300 flex justify-between items-center">
+  <div>
+    <%= link_to root_path do %>
+      <%= heroicon 'home', class: 'inline-block' %>Home
+    <% end %>
+  </div>
+  <% if authenticated? %>
+    <%= button_to "Log out", session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Log in", new_session_path %>
+  <% end %>
+</header>

@@ -1,4 +1,6 @@
 class WolpertingersController < ApplicationController
+
+  allow_unauthenticated_access
   before_action :set_wolpertinger, only: %i[ show edit update destroy ]
 
   # GET /wolpertingers or /wolpertingers.json

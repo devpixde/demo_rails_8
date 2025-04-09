@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[ show edit update destroy ]
 
+  allow_unauthenticated_access
   # GET /people or /people.json
   def index
     @people = Person.all
