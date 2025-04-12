@@ -1,12 +1,30 @@
 <h2>Enum Beispiel</h2>
 
 <section>
-  Wir haben einen Article der verschiedene Status haben kann: draft, pulished, archived, deletet.
+  Wir haben einen Article der verschiedene Status haben kann: draft, published, archived, deleted.
   Diese Status kann man sehr gut als enum implementieren.
+</section>
+
+<p>
+  <a href="https://blog.saeloun.com/2022/01/05/how-to-use-enums-in-rails/">https://blog.saeloun.com/2022/01/05/how-to-use-enums-in-rails/</a>
+  <br>
+  <a href="https://www.honeybadger.io/blog/how-to-use-enum-attributes-in-ruby-on-rails/">https://www.honeybadger.io/blog/how-to-use-enum-attributes-in-ruby-on-rails/</a>
+
+</p>
+
+<section>
+
+  Wie haben die folgenden Status zur Verfügung: <br>
+  <ol>
+
+    <% Article.statuses.each do |key, val| %>
+      <li><b><%= key %></b></li>
+    <% end %>
+  </ol>
 </section>
 
 
 
 <div class="mt-10">
-<%= link_to 'Artikel index', articles_path %>
+  <%= link_to 'Artikel index', articles_path %>
 </div>

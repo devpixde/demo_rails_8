@@ -14,8 +14,9 @@
   <section class="ml-4">
     <h2>Rails Features</h2>
     <ul class="ml-4">
-      <li><%= link_to "Upload images", image_examples_path %> (nur mit login)</li>
-      <li><%= link_to "Live Update (Pseudo Chat)", pseudo_chats_path %> (nur mit login)</li>
+      <li><%= link_to "Upload images", image_examples_path %><%= render 'partials/locked' %>
+      </li>
+      <li><%= link_to "Live Update (Pseudo Chat)", pseudo_chats_path %> <%= render 'partials/locked' %>
     </ul>
   </section>
 
@@ -62,7 +63,7 @@
     <h2>Enum am Beispiel von Article</h2>
     <ul class="ml-4">
       <li>
-        <%= link_to "Enum Beispiel", enum_example_path %> (nur mit login)
+        <%= link_to "Enum Beispiel", enum_example_path %> <%= render 'partials/locked' %>
       </li>
     </ul>
   </section>
