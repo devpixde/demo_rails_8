@@ -1,0 +1,2 @@
+class EnumExampleController < ApplicationController
+end

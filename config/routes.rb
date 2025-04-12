@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   resource :session
   resources :passwords, param: :token
   resources :people
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   get "testing/index"
   resources :wolpertingers
 
-
   post "wolpertingers/toggle_walk"
 
   get "log_test/index"
@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   resources :pseudo_chats, only: [:index, :create]
   resources :image_examples
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
@@ -37,6 +35,7 @@ Rails.application.routes.draw do
   get "/cycle" => "cycle#index"
   get "/truncate" => "truncate#index"
   get "/striptags" => "striptags#index"
+  get "enum_example" => "enum_example#index"
 
   # Stimuls Examples
 

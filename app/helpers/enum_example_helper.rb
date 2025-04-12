@@ -1,0 +1,2 @@
+module EnumExampleHelper
+end
