@@ -1,6 +1,17 @@
 <h1>Authenticate and CanCanCan</h1>
 
 <h2>Authenticate</h2>
-
+<section>
+  <pre>bin/rails generate authentication</pre>
+  migrieren
+  <p>Standardmäßg erfordern alle Seiten einen Login</p>
+  <p>Seiten, die ohne Autorisierung zugänglich sein sollen, bekommen: ```allow_unauthenticated_access``` im Controller</p>
+  <p>Der angemeldete User ist als ```Current.user``` verfügbar. (Nur wenn authorisiert) </p>
+  <p>Der Helper ```authenticated?``` steht in der View zur Verfügung</p>
+</section>
 
 <h2>CanCanCan</h2>
+<section>
+  <pre>gem 'cancancan'</pre>
+
+</section>
