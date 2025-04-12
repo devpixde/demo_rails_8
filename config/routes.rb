@@ -36,8 +36,8 @@ Rails.application.routes.draw do
   get "/cycle" => "cycle#index"
   get "/truncate" => "truncate#index"
   get "/striptags" => "striptags#index"
-  get "enum_example" => "enum_example#index"
-
+  get "/enum_example" => "enum_example#index"
+  get "/admin_dashboard" => "admin_dashboard#index"
   # Stimuls Examples
 
   get "/stimulus_greeter" => "stimulus_greeter#index"
