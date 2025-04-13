@@ -5,14 +5,19 @@
     <% end %>
   </div>
   <div>
-    User: <%= current_user&.email_address %>
+    <% if current_user %>
+      User: <%= current_user.email_address %> |
+      Rolle: <%= current_user.role %>
+      <% else %>
+    Du bist nicht angemeldet!
+    <% end %>
   </div>
   <div>
 
-  <% if authenticated? %>
-    <%= button_to "Log out", session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Log in", new_session_path %>
-  <% end %>
+    <% if authenticated? %>
+      <%= button_to "Log out", session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Log in", new_session_path %>
+    <% end %>
   </div>
 </header>
