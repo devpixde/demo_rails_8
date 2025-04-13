@@ -1,6 +1,7 @@
 <h1>Authenticate and CanCanCan</h1>
 
-<h2>Authenticate</h2>
+<h2>Authentifizierung</h2>
+<p>Die Authentifizierung (Benutzeridentifizierung) erfolgt mit dem authenticate Feature aus Rails 8</p>
 <section>
   <pre>bin/rails generate authentication</pre>
   migrieren
@@ -10,11 +11,21 @@
   <p>Der Helper ```authenticated?``` steht in der View zur Verfügung</p>
 </section>
 
-<h2>CanCanCan</h2>
+<h2>Autorisierung</h2>
+<p>Die Autorisierung, (also: "Wer darf Was?"), erfolgt mit CanCanCan.</p>
 <section>
-  <pre>gem 'cancancan'</pre>
+  <pre>gem 'cancancan'
+bundle install
+rails generate cancan:ability</pre>
 
 </section>
+
+<h2>Beispiele</h2>
+<h3>Admin Dashboard</h3>
+<section>Nur ein Admin kann auf das Admin Dashboard zugreifen:
+  <br><%= link_to 'Admin Dashboard', admin_dashboard_path %>
+</section>
+
 
 <h2>Users</h2>
 wir brauchen auch ein paar user
