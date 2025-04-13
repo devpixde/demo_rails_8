@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_12_191638) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_13_082150) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -61,6 +61,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_12_191638) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.boolean "published"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "pseudo_chats", force: :cascade do |t|
     t.string "message"
     t.datetime "created_at", null: false
@@ -100,5 +110,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_12_191638) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "users"
   add_foreign_key "sessions", "users"
 end

@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<h1>Posts</h1>
+<p>
+<ul>
+  <li>Jeder angemeldete User kann einen Post erstellen</li>
+  <li>Jeder kann public posts lesen</li>
+  <li>Ein Insider darf alle posts lesen</li>
+  <li>Ein Mediator darf alle Posts lesen und public ändern</li>
+  <li>Der Ersteller eines Posts darf alles mit diesem Post machen</li>
+  <li>Der Admin darf alles</li>
+</ul>
+<!-- Todo: -->
+<div class="bg-red-700 text-white font-bold text-xl p-4">Todo Implementieren!</div>
+
+
+</p>
+<div class="bg-orange-100">
+
+  <% if authenticated? %>
+    <%= link_to "New post", new_post_path %>
+  <% else %>
+    Neue Posts können nur angemeldete User anlegen!
+  <% end %>
+</div>
+<hr class="m-2">
+<div id="posts" class="bg-white p-2">
+  <%= 'Keine Posts vorhanden' unless @posts.count > 0 %>
+  <% @posts.each do |post| %>
+    <% if can? :show, post %>
+      <%= render post %>
+      <p>
+        <%= link_to "Show this post", post %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+
