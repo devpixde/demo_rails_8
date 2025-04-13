@@ -12,6 +12,11 @@
     Du bist nicht angemeldet!
     <% end %>
   </div>
+
+  <% if flash[:alert] %>
+    <div class="bg-red-400 p-4 text-red-800 font-bold"><%= flash[:alert] %></div>
+  <% end %>
+
   <div>
 
     <% if authenticated? %>

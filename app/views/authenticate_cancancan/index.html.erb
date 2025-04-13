@@ -5,10 +5,10 @@
 <section>
   <pre>bin/rails generate authentication</pre>
   migrieren
-  <p>Standardmäßg erfordern alle Seiten einen Login</p>
+  <p>Standardmäßig erfordern alle Seiten einen Login</p>
   <p>Seiten, die ohne Autorisierung zugänglich sein sollen, bekommen: <code>allow_unauthenticated_access</code> im
     Controller</p>
-  <p>Der angemeldete User ist als <code>Current.user</code> verfügbar. (Nur wenn authorisiert) </p>
+  <p>Der angemeldete User ist als <code>Current.user</code> verfügbar. (Nur wenn authorised) </p>
   <p>Der Helper <code>authenticated?</code> steht in der View zur Verfügung</p>
 </section>
 
@@ -31,8 +31,8 @@ rails generate cancan:ability</pre>
 </section>
 
 
-<h2>Users</h2>
-wir brauchen auch ein paar user
+<h3>Users</h3>
+Die Users Liste dürfen angemeldete User sehen, aber nur admins bearbeiten:
 <section>
   <%= link_to 'users', users_path %>
 </section>
