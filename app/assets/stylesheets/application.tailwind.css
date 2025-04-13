@@ -34,6 +34,10 @@
         @apply p-4 m-2 bg-yellow-50 border rounded-md;
     }
 
+    code{
+        @apply bg-orange-200 p-1;
+    }
+
     input[type=submit], input[type=button], button {
         @apply bg-lime-700 hover:bg-lime-900 text-white my-4 p-2 rounded-lg border ;
     }
