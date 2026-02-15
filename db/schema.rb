@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_08_125946) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_15_120817) do
   create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.bigint "record_id", null: false
+    t.string "record_type", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum"
+    t.string "content_type"
     t.datetime "created_at", null: false
+    t.string "filename", null: false
+    t.string "key", null: false
+    t.text "metadata"
+    t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -39,31 +39,77 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_08_125946) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.integer "status"
+    t.datetime "updated_at", null: false
+  end
+
   create_table "image_examples", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pseudo_chats", force: :cascade do |t|
-    t.string "message"
+  create_table "people", force: :cascade do |t|
+    t.integer "age"
     t.datetime "created_at", null: false
+    t.string "firstname"
+    t.boolean "is_climber"
+    t.string "lastname"
     t.datetime "updated_at", null: false
   end
 
-  create_table "wolpertingers", force: :cascade do |t|
-    t.string "state"
-    t.boolean "is_walking"
-    t.string "color"
-    t.integer "age"
-    t.string "mood"
+  create_table "posts", force: :cascade do |t|
+    t.text "body"
     t.datetime "created_at", null: false
+    t.boolean "published"
+    t.string "title"
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "pseudo_chats", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "message"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "ip_address"
+    t.datetime "updated_at", null: false
+    t.string "user_agent"
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email_address", null: false
+    t.string "password_digest", null: false
+    t.integer "role", default: 0
+    t.datetime "updated_at", null: false
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
+  end
+
+  create_table "wolpertingers", force: :cascade do |t|
+    t.integer "age"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.boolean "is_walking"
+    t.string "mood"
     t.string "name"
+    t.string "state"
     t.datetime "time_asleep"
     t.datetime "time_awaken"
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "users"
+  add_foreign_key "sessions", "users"
 end

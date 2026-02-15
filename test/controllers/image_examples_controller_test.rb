@@ -17,7 +17,7 @@ class ImageExamplesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create image_example" do
     assert_difference("ImageExample.count") do
-      post image_examples_url, params: { image_example: { body: @image_example.body } }
+      post image_examples_url, params: { image_example: { body: @image_example.body } }, headers: { "HTTP_AUTHORIZATION" => ActionController::HttpAuthentication::Basic.encode_credentials('devpix', 'foo') }
     end
 
     assert_redirected_to image_example_url(ImageExample.last)

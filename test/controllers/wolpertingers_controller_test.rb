@@ -17,7 +17,7 @@ class WolpertingersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create wolpertinger" do
     assert_difference("Wolpertinger.count") do
-      post wolpertingers_url, params: { wolpertinger: { age: @wolpertinger.age, color: @wolpertinger.color, is_walking: @wolpertinger.is_walking, mood: @wolpertinger.mood, state: @wolpertinger.state } }
+      post wolpertingers_url, params: { wolpertinger: { name: "Bello2", age: @wolpertinger.age, color: @wolpertinger.color, is_walking: @wolpertinger.is_walking, mood: @wolpertinger.mood, state: @wolpertinger.state } }
     end
 
     assert_redirected_to wolpertinger_url(Wolpertinger.last)
@@ -34,7 +34,7 @@ class WolpertingersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update wolpertinger" do
-    patch wolpertinger_url(@wolpertinger), params: { wolpertinger: { age: @wolpertinger.age, color: @wolpertinger.color, is_walking: @wolpertinger.is_walking, mood: @wolpertinger.mood, state: @wolpertinger.state } }
+    patch wolpertinger_url(@wolpertinger), params: { wolpertinger: { name: @wolpertinger.name, age: @wolpertinger.age, color: @wolpertinger.color, is_walking: @wolpertinger.is_walking, mood: @wolpertinger.mood, state: @wolpertinger.state } }
     assert_redirected_to wolpertinger_url(@wolpertinger)
   end
 
