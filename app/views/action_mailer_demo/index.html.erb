@@ -3,8 +3,20 @@
 </h1>
 
 
-<ul>
-  <li>
-    <%= link_to "Send Email", send_simple_email_path %>
-  </li>
-</ul>
+<h2>Simple Email</h2>
+<%= button_to 'Send Email', send_simple_email_path, method: :post %>
+<h3>Was passiert hier?</h3>
+<p>
+  <ol class="list-decimal list-outside pl-5 space-y-2">
+    <li>
+      Der Button "Send Email" sendet einen Post request an den Controller "ActionMailerDemoController" und ruft die Methode "simple_email" auf.
+    </li>
+    <li>
+      Die Methode simple_email ruft den Mailer "SimpleEmailMailer#just_send_an_email"  auf und sendet eine Email..
+    </li>
+    <li>
+      Im Entwicklungsmodus ist die App mit der gem "letter_opener" so konfiguriert, dass die Email im Browser geöffnet wird.
+    </li>
+  </ol>
+</p>
+

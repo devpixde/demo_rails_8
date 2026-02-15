@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get "/stimulus_greeter" => "stimulus_greeter#index"
 
   get "action_mailer_demo" => "action_mailer_demo#index"
-  get "send_simple_email" => "action_mailer_demo#simple_email"
+  post "send_simple_email" => "action_mailer_demo#simple_email"
 
 
 end
