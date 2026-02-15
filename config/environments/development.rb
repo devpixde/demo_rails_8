@@ -31,9 +31,26 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Use Letter Opener to send emails during development.
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
+  # Use Letter Opener to preview emails in browser during development.
+
+  ########### start letter opener ############
+    # config.action_mailer.delivery_method = :letter_opener
+    # config.action_mailer.perform_deliveries = true
+  ########### end letter opener ############
+
+
+  # start mailpit in cli ( just type mailpit in terminal)
+  # Use the following config to send emails in development environment that are captured by Mailpit, a local SMTP server and web interface for testing emails.
+  ########### start mailpit ################
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "localhost",
+    port: 1025
+  }
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  ########### end mailpit ###############
+
+
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

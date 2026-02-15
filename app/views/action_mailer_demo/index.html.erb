@@ -4,8 +4,15 @@
 
 
 <h2>Simple Email</h2>
-<%= button_to 'Send Email', send_simple_email_path, method: :post %>
+<%= button_to 'Send Email', send_simple_email_path, method: :post, data: { turbo: false } %>
 <h3>Was passiert hier?</h3>
+
+Je nach Konfiguration der App können Emails auf verschiedene Arten gesendet werden.
+Siehe "config/environments/development.rb" für weitere Informationen.
+
+<h4 class="mt-10">
+  Bei Konfiguration für "letter_opener":
+</h4>
 <p>
   <ol class="list-decimal list-outside pl-5 space-y-2">
     <li>
@@ -19,4 +26,13 @@
     </li>
   </ol>
 </p>
+
+<h4 class="mt-10">
+  Bei Konfiguration für "mailpit":
+</h4>
+  <ol class="list-decimal list-outside pl-5 space-y-2">
+    <li>Mailpit muss laufen. (CLI "mailpit" in der Konsole ausführen)</li>
+    <li>Die Email wird an den Mailpit Server gesendet und kann dort angezeigt werden.</li>
+    <li>Mailpit ist unter <a hre="http://localhost:8025/">http://localhost:8025/</a> zu erreichen.</li>
+  </ol>
 
